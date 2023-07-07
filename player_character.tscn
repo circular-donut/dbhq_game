@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1rsnapiigsu"]
+
+[ext_resource type="Texture2D" uid="uid://bgiieoog6nj6m" path="res://the_player_colon_three.png" id="1_s02e6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p63rd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s02e6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54ujg"]
+size = Vector2(30, 30)
+
+[node name="player_character" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p63rd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_54ujg")
