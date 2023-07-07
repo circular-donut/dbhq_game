@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://coasaojgms1gk"]
+
+[ext_resource type="Texture2D" uid="uid://bctkr45pghix4" path="res://foot_1.png" id="1_t822x"]
+[ext_resource type="Texture2D" uid="uid://dfmk7fnr4nurp" path="res://foot_2.png" id="2_fn76l"]
+[ext_resource type="Texture2D" uid="uid://rnpvthkakqim" path="res://foot_3.png" id="3_ivais"]
+[ext_resource type="Texture2D" uid="uid://mdn0g1hu85js" path="res://foot_4.png" id="4_7j4e2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gpcd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t822x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fn76l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fn76l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ivais")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7j4e2")
+}],
+"loop": true,
+"name": &"darkening_shadow",
+"speed": 5.0
+}]
+
+[node name="foot_shadow" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5gpcd")
+animation = &"darkening_shadow"
+frame_progress = 0.606992
