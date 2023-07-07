@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhlc0l1bkirde"]
 
-[ext_resource type="Texture2D" uid="uid://bxaakcuubt1ne" path="res://the_griound.png" id="1_7qsue"]
+[ext_resource type="Texture2D" uid="uid://cgmjthrgri3kr" path="res://the_ground.png" id="1_apgki"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,4 +9,4 @@ offset_left = -232.0
 offset_top = -231.0
 offset_right = 248.0
 offset_bottom = 249.0
-texture = ExtResource("1_7qsue")
+texture = ExtResource("1_apgki")
