@@ -1,22 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfkn1djskxlay"]
+[gd_scene load_steps=7 format=3 uid="uid://cfkn1djskxlay"]
 
-[ext_resource type="PackedScene" uid="uid://bhlc0l1bkirde" path="res://the_world.tscn" id="1_aedtf"]
 [ext_resource type="Script" path="res://main.gd" id="1_s6qry"]
+[ext_resource type="Texture2D" uid="uid://dwnfyyd6becl7" path="res://water.png" id="2_0hwfj"]
 [ext_resource type="PackedScene" uid="uid://bauwdpdq0anp7" path="res://player.tscn" id="2_odif2"]
+[ext_resource type="Texture2D" uid="uid://bgr7dagv25voh" path="res://fisihing_line.png" id="4_86cm4"]
 [ext_resource type="AudioStream" uid="uid://d35mhmxs3ntj7" path="res://game_jam_loop.mp3" id="4_l01t4"]
+
+[sub_resource type="Curve2D" id="Curve2D_28x3x"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_s6qry")
 
-[node name="Node2D" parent="." instance=ExtResource("1_aedtf")]
-position = Vector2(232, 231)
-
-[node name="player" parent="." instance=ExtResource("2_odif2")]
-position = Vector2(234, 233)
-scale = Vector2(5, 5)
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(478, 478)
+scale = Vector2(1, 1)
+texture = ExtResource("2_0hwfj")
 
 [node name="start_position" type="Marker2D" parent="."]
-position = Vector2(240, 240)
+position = Vector2(481, 444)
 
 [node name="game_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_l01t4")
+
+[node name="player" parent="." instance=ExtResource("2_odif2")]
+z_index = 10
+z_as_relative = false
+position = Vector2(242, 233)
+scale = Vector2(10, 10)
+
+[node name="Path2D" type="Path2D" parent="player"]
+curve = SubResource("Curve2D_28x3x")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D"]
+position = Vector2(25.1, -27.1)
+scale = Vector2(0.1, 0.1)
+
+[node name="FisihingLine" type="Sprite2D" parent="player/Path2D/PathFollow2D"]
+z_index = 1
+z_as_relative = false
+position = Vector2(-246, -209)
+texture = ExtResource("4_86cm4")
